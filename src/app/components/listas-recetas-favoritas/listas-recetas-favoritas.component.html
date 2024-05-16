@@ -1,0 +1,24 @@
+
+<button class="mt-3 ms-3 btn btn-outline-success" (click)="guardarLista()">Guardar</button>
+<div class="row mb-2 d-flex justify-content-center "  >
+    <div class="col-md-5 " *ngFor="let receta of recomendacion; let indice = index;">
+      <div class="row g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative  p-2 text-dark "style="font-weight: 600;  background-color: rgba(255, 255, 127, 0.5);">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">{{receta.strArea}}</strong>
+          <h3 class="mb-2">{{receta.strMeal}}</h3>
+          <div style="height: 40px; overflow: auto;">
+          <a class="p-0 m-0" href="{{receta.strYoutube}}">
+            Recipe link
+          </a>
+        </div>
+          <div class="mb-1 mt-2 text-body-secondary">{{receta.strCategory}}</div>
+          <p style="height:150px;" class="card-text mb-auto border overflow-auto">{{receta.strInstructions}}</p>
+
+        </div>
+        <div class="col-auto  d-block mt-3 d-flex flex-column justify-content-center align-items-center" >
+            <img class="d-block" src={{receta.strMealThumb}}?  height="250">
+            <button class="mt-3 btn btn-outline-success" (click)="quitar(indice)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+</div>

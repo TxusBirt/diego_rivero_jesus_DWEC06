@@ -1,0 +1,99 @@
+<p>detalle-receta works!</p>
+  <div class=" d-flex justify-content-center">
+    <button class="btn btn-outline-success d-block text-center fw-bold" (click)="cerrar()" >cerrar ficha</button>
+  </div>
+  
+  <div class="row mb-2 d-flex justify-content-center " *ngIf="receta.idMeal!=0; else plantilla">
+      <div class="col-md-5 "  style="font-weight: 600;  background-color: rgba(158, 158, 36, 0.9);">
+        <div class="row g-0 border rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-success p-2 text-dark bg-opacity-25"  >
+        <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary-emphasis">{{receta.strArea}}</strong>
+            <h3 class="mb-2">{{receta.strMeal}}</h3>
+            <div style="height: 40px; overflow: auto;">
+                <a class="p-0 m-0" href={{receta.strYoutube}}>
+              Recipe link
+                </a>
+            </div>
+            <div class="mb-1 mt-2 fw-bold text-body-secondary">{{receta.strCategory}}</div>
+                <p  class="card-text mb-auto overflow-auto">{{receta.strInstructions}}</p>
+  
+            </div>
+            <div class="col-auto  d-block mt-3 d-flex flex-column justify-content-center "  >
+                <img class="d-block" src={{receta.strMealThumb}}  height="250px">
+                <div class="mb-1 mt-2 text-body-secondary fw-bold text-center">Tags: {{receta.strTags}}</div>
+                <ul class="list-group" >
+                    <h3 class="text-center">Ingredientes</h3>
+                    <li class="list-group-item" *ngIf="receta.strIngredient1!=''">
+                        {{ receta.strIngredient1}}: {{ receta.strMeasure1}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient2!=''">
+                        {{ receta.strIngredient2}}: {{ receta.strMeasure2}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient3!=''">
+                        {{ receta.strIngredient3}}: {{ receta.strMeasure3}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient4!=''">
+                        {{ receta.strIngredient4}}: {{ receta.strMeasure4}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient5!=''">
+                        {{ receta.strIngredient5}}: {{ receta.strMeasure5}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient6!=''">
+                        {{ receta.strIngredient6}}: {{ receta.strMeasure6}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient7!=''">
+                        {{ receta.strIngredient7}}: {{ receta.strMeasure7}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient8!=''">
+                        {{ receta.strIngredient8}}: {{ receta.strMeasure8}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient9!=''">
+                        {{ receta.strIngredient9}}: {{ receta.strMeasure9}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient10!=''">
+                        {{ receta.strIngredient10}}: {{ receta.strMeasure10}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient11!=''">
+                        {{ receta.strIngredient11}}: {{ receta.strMeasure11}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient12!=''">
+                        {{ receta.strIngredient12}}: {{ receta.strMeasure12}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient13!=''">
+                        {{ receta.strIngredient13}}: {{ receta.strMeasure13}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient14!=''">
+                        {{ receta.strIngredient14}}: {{ receta.strMeasure14}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient15!=''">
+                        {{ receta.strIngredient15}}: {{ receta.strMeasure15}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient16!=''">
+                        {{ receta.strIngredient16}}: {{ receta.strMeasure16}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient17!=''">
+                        {{ receta.strIngredient17}}: {{ receta.strMeasure17}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient18!=''">
+                        {{ receta.strIngredient18}}: {{ receta.strMeasure18}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient19!=''">
+                        {{ receta.strIngredient19}}: {{ receta.strMeasure19}}
+                    </li>
+                    <li class="list-group-item" *ngIf="receta.strIngredient20!=''">
+                        {{ receta.strIngredient20}}: {{ receta.strMeasure20}}
+                    </li>
+
+                </ul>
+            </div>
+
+      </div>
+  </div>
+</div>
+<ng-template #plantilla>
+    <h1 class=" text-center text-light fw-bold"> Escoge una receta en el catalogo de recetas</h1>
+</ng-template>
+
+
+  
+

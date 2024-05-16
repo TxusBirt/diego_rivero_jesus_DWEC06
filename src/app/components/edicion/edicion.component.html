@@ -1,0 +1,232 @@
+<p>edicion works!</p>
+<h2 class="text-center"> Lista: {{nombreLista}}</h2>
+<form  (ngSubmit) = "edicionReceta()" class="bg-white w-25 d-flex flex-column justify-content-center p-4 fs-5 m-auto">
+    <div class="mb-3">
+        <label for="area" class="form-label">Area</label>
+        <input type="text" class="form-control" id="area" name="area" [(ngModel)]="area" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="categoria" class="form-label" >Categoria</label>
+      <input type="text" class="form-control" id="categoria" name="categoria" [(ngModel)]="categoria" aria-describedby="categoriaHelp">
+      
+    </div>
+    <div class="mb-3">
+        <label for="instrucciones" class="form-label" >Instrucciones</label>
+        <input type="text-area" class="form-control" id="instrucciones" name="instrucciones" [(ngModel)]="instrucciones" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="nombreReceta" class="form-label" >Nombre Receta</label>
+      <input type="text" class="form-control" [(ngModel)]="nombreReceta" name="nombreReceta" id="nombreReceta">
+    </div>
+    <div class="mb-3">
+        <label for="tag" class="form-label" >tag</label>
+        <input type="text" class="form-control" [(ngModel)]="tag" name="tag" id="tag">
+    </div>
+    <div class="mb-3">
+        <label for="youtube" class="form-label" >Enlace youtube</label>
+        <input type="text" class="form-control" id="youtube" name="youtube" [(ngModel)]="youtube" aria-describedby="emailHelp">
+    </div>
+    <div class="row" *ngIf="ingrediente1!=null">
+    <div class="mb-3  col-8" *ngIf="ingrediente1!=''">
+        <label for="ingrediente1" class="form-label" >ingrediente1</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente1" name="ingrediente1" id="ingrediente1">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente1!=''">
+        <label for="medida1" class="form-label" >medida1</label>
+        <input type="text" class="form-control" [(ngModel)]="medida1" name="medida1" id="medida1">
+    </div>
+    </div>  
+    <div class="row" *ngIf="ingrediente2!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente2!=''">
+        <label for="ingrediente2" class="form-label" >ingrediente2</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente2" name="ingrediente2"  id="ingrediente2">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente2!=''">
+        <label for="medida2" class="form-label" >medida2</label>
+        <input type="text" class="form-control" [(ngModel)]="medida2" name="medida2" id="medida2">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente3!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente3!=''">
+        <label for="ingrediente3" class="form-label" >ingrediente3</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente3" name="ingrediente3"  id="ingrediente4">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente3!=''">
+        <label for="medida3" class="form-label" >medida3</label>
+        <input type="text" class="form-control" [(ngModel)]="medida3" name="medida3" id="medida4">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente4!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente4!=''" >
+        <label for="ingrediente4" class="form-label" >ingrediente4</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente4" name="ingrediente4"  id="ingrediente4">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente4!=''">
+        <label for="medida4" class="form-label" >medida4</label>
+        <input type="text" class="form-control" [(ngModel)]="medida4" name="medida4"  id="medida4">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente5!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente5!=''">
+        <label for="ingrediente5" class="form-label" >ingrediente5</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente5" name="ingrediente5" id="ingrediente5">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente5!=''">
+        <label for="medida5" class="form-label" >medida5</label>
+        <input type="text" class="form-control" [(ngModel)]="medida5" name="medida5" id="medida5">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente6!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente6!=''" >
+        <label for="ingrediente6" class="form-label" >ingrediente6</label>
+         <input type="text" class="form-control" [(ngModel)]="ingrediente6" name="ingrediente6"  id="ingrediente6">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente6!=''">
+        <label for="medida6" class="form-label" >medida6</label>
+         <input type="text" class="form-control" [(ngModel)]="medida6" name="medida6" id="medida6">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente7!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente7!=''" >
+        <label for="ingrediente7" class="form-label" >ingrediente7</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente7" name="ingrediente7"  id="ingrediente7">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente7!=''">
+        <label for="medida7" class="form-label" >medida7</label>
+        <input type="text" class="form-control" [(ngModel)]="medida7" name="medida7"  id="medida7">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente8!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente8!=''">
+        <label for="ingrediente8" class="form-label" >ingrediente8</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente8" name="ingrediente8"  id="ingrediente8">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente8!=''">
+        <label for="medidae8" class="form-label" >medida8</label>
+        <input type="text" class="form-control" [(ngModel)]="medida8" name="medida8"  id="medida8">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente9!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente9!=''" >
+        <label for="ingrediente9" class="form-label" >ingrediente9</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente9" name="ingrediente9"  id="ingrediente9">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente9!=''">
+        <label for="medida9" class="form-label" >medida9</label>
+        <input type="text" class="form-control" [(ngModel)]="medida9" name="medida9"  id="medida9">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente10!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente10!=''">
+        <label for="ingrediente10" class="form-label" >ingrediente10</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente10" name="ingrediente10"  id="ingrediente10">
+    </div>
+    <div class="mb-3 col-4"  *ngIf="ingrediente10!=''">
+        <label for="medida10" class="form-label" >medida10</label>
+        <input type="text" class="form-control" [(ngModel)]="medida10" name="medida10"  id="medida10">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente11!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente11!='' ">
+        <label for="ingrediente11" class="form-label" >ingrediente11</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente11" name="ingrediente11" id="ingrediente11">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente11!=''">
+        <label for="medida11" class="form-label" >medida11</label>
+        <input type="text" class="form-control" [(ngModel)]="medida11" name="medida11" id="medida11">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente12!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente12!=''">
+        <label for="ingrediente12" class="form-label" >ingrediente12</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente12" name="ingrediente12" id="ingrediente12">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente12!=''" >
+        <label for="medida12" class="form-label" >medida12</label>
+        <input type="text" class="form-control" [(ngModel)]="medida12" name="medida12"  id="medida12">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente13!=null">
+    <div class="mb-3 col-8"  *ngIf="ingrediente13!=''" >
+    <label for="ingrediente13" class="form-label" >ingrediente13</label>
+    <input type="text" class="form-control" [(ngModel)]="ingrediente13" name="ingrediente13"  id="ingrediente13">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente13!=''" >
+        <label for="medida13" class="form-label" >medida13</label>
+        <input type="text" class="form-control" [(ngModel)]="medida13" name="medida13"  id="medida13">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente14!=null">
+    <div class="mb-3 col-8 " *ngIf="ingrediente14!=''">
+        <label for="ingrediente14" class="form-label" >ingrediente14</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente14" name="ingrediente14"  id="ingrediente14">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente14!=''">
+        <label for="medida14" class="form-label" >medida14</label>
+        <input type="text" class="form-control" [(ngModel)]="medida14" name="medida14"  id="medida14">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente15!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente15!=''">
+        <label for="ingrediente15" class="form-label" >ingrediente15</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente15" name="ingrediente15"  id="ingrediente15">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente15!=''">
+        <label for="medida15" class="form-label" >medida15</label>
+        <input type="text" class="form-control" [(ngModel)]="medida15" name="medida15" id="medidamedida15">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente16!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente16!='' " >
+        <label for="ingrediente16" class="form-label" >ingrediente16</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente11" name="ingrediente16" id="ingrediente16">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente16!=''">
+        <label for="medida16" class="form-label" >medida16</label>
+        <input type="text" class="form-control" [(ngModel)]="medida11" name="medida16" id="medida16">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente17!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente17!=''">
+        <label for="ingrediente17" class="form-label" >ingrediente17</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente12" name="ingrediente17" id="ingrediente17">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente17!=''" >
+        <label for="medida17" class="form-label" >medida17</label>
+        <input type="text" class="form-control" [(ngModel)]="medida12" name="medida17"  id="medida17">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente18!=null">
+    <div class="mb-3 col-8"  *ngIf="ingrediente18!=''" >
+    <label for="ingrediente18" class="form-label" >ingrediente18</label>
+    <input type="text" class="form-control" [(ngModel)]="ingrediente18" name="ingrediente18"  id="ingrediente18">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente18!=''" >
+        <label for="medida18" class="form-label" >medida18</label>
+        <input type="text" class="form-control" [(ngModel)]="medida18" name="medida18"  id="medida18">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente19!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente19!=''">
+        <label for="ingrediente19" class="form-label" >ingrediente19</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente19" name="ingrediente19"  id="ingrediente19">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente19!=''">
+        <label for="medida19" class="form-label" >medida19</label>
+        <input type="text" class="form-control" [(ngModel)]="medida19" name="medida14"  id="medida19">
+    </div>
+    </div>
+    <div class="row" *ngIf="ingrediente20!=null">
+    <div class="mb-3 col-8" *ngIf="ingrediente20!=''">
+        <label for="ingrediente20" class="form-label" >ingrediente20</label>
+        <input type="text" class="form-control" [(ngModel)]="ingrediente20" name="ingrediente20"  id="ingrediente20">
+    </div>
+    <div class="mb-3 col-4" *ngIf="ingrediente20!=''">
+        <label for="medida20" class="form-label" >medida20</label>
+        <input type="text" class="form-control" [(ngModel)]="medida15" name="medida20" id="medidamedida20">
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+  
+ 

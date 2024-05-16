@@ -1,0 +1,20 @@
+section {
+    background-image: url(../assets/img/cocina.jpg);
+    background-size: cover;
+    min-height: 1400px;
+}
+nav {
+    background-color: rgba(195, 186, 186, 0.7);
+}
+
+li {
+    background-color: rgba(214, 194, 194, 0.7);
+    border: 2px solid rgb(188, 185, 185);
+    box-shadow: 6px 6px grey;
+    border-radius: 10px;
+}
+a {
+    font-weight: bold;
+    color:grey;
+    text-shadow: 2px 2px rgb(50, 50, 50);
+}

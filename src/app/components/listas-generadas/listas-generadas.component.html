@@ -1,0 +1,30 @@
+
+<h3 class="fw-bold text-center">LISTAS DE USUARIOS</h3>
+<h4 class="fw-bold text-center ">RECETAS</h4>
+<label class= "w-25 d-block m-auto fs-4" for="pass">Clave de edicion Lista</label>
+<input type="text" class= "w-25 d-block  m-auto" name="pass" id="pass" [(ngModel)]="password" placeholder="introduzca clave edicion y valide">
+<ul class="list-group mt-3" *ngFor="let item of listaRecetas; let i=index">
+    <div class="row w-50 m-auto ">
+        <p class=" col-12 text-start fw-bold  m-auto fs-4 d-flex align-items-center" style="background-color: rgba(255, 228, 196, .8);">Autor: {{item.username}} | Nombre lista: {{item.nombreLista}}
+        <button class=" d-block ms-3 btn p-2 btn-outline-danger"  [disabled]="!item.edicion" (click)="eliminarReceta(item)" >eliminar</button>
+        <button class=" d-block ms-2 btn btn-outline-success" (click)="comprobar(item)">Validar</button>
+        <button class="btn btn-outline-success  ms-2" type="button" [disabled]="!item.edicion" (click)="crearReceta(item)" >Crear Receta</button>
+        </p>
+    </div>
+    <li class="list-group-item fw-bold fs-5 w-50 m-auto " style="background-color: rgba(255, 228, 196, .8);" *ngFor="let item1 of item.recetasFavoritas; let j=index" #nombreElemento>
+            Receta numero {{j+1}}: {{item1.strMeal}} <br>
+            Etiquetas: {{item1.strTags}}
+            <div class="d-grid gap-2 d-md-block">
+                <button class="btn btn-outline-success" type="button" [disabled]="!item.edicion" (click)="edicion(item1, item.nombreLista, j)" >Editar</button>
+                |
+                <button class="btn btn-outline-success" type="button"  (click)="detalles(item1)">Ver</button>
+                
+                
+                
+                
+                
+            </div>    
+    </li>
+</ul>
+
+

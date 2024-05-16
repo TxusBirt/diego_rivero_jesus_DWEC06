@@ -1,0 +1,41 @@
+
+<nav aria-label="Page navigation d-flex justify-content-center">
+    <ul class="pagination justify-content-center">
+        <li class="page-item page-link btn" *ngFor="let letra of abecedario" (click)="filtroLetra(letra)">{{letra.toUpperCase()}}</li>
+    </ul>
+</nav>
+  <div class=" d-flex justify-content-center">
+    <button class=" mb-2 fs-5 pb-1 btn btn-outline-success"  (click)="autorizar()"  >crear lista</button>
+  </div>
+  <div class="row mb-2 d-flex justify-content-center" *ngIf="listaRecetas!=null; else listaVacia">
+      <div class="col-md-5 " *ngFor="let receta of listaRecetas | paginate: { itemsPerPage:4, currentPage: page}" >
+        <div class="row g-0 border border-black rounded flex-md-row mb-4 shadow-sm h-md-250 position-relative  p-2 text-dark " style="font-weight: 600;  background-color: rgba(255, 255, 127, 0.5);" >
+          <div class="col p-4 d-flex flex-column position-static" style="height: 400px;">
+            <strong class="d-inline-block mb-2 text-primary-emphasis">{{receta.strArea}}</strong>
+            <h3 class="mb-2">{{receta.strMeal}}</h3>
+            <div style="height: 40px; overflow: auto;">
+            <a class="p-0 m-0" href="{{receta.strYoutube}}">
+              Recipe link
+            </a>
+          </div>
+            <div class="mb-1 mt-2 fw-bold fs-3 text-body-secondary">{{receta.strCategory}}</div>
+            <p style="height:2000px;" class="card-text fw-bold mb-auto border overflow-auto">{{receta.strInstructions}}</p>
+  
+          </div>
+          <div class="col-auto  d-block mt-3 d-flex flex-column justify-content-center align-items-center" >
+              <img class="d-block" src={{receta.strMealThumb}}?  height="250">
+              <button class="btn mt-3 btn-outline-success"  *ngIf="permiso==false" (click)="sumarRecomendacion( receta)">Añadir a lista</button> 
+          </div>
+          <!--<button class="mt-3 " (click)="sumarListaFav( receta)">Añadir a listaFavoritos</button>-->
+          <button class="btn mt-3 btn-outline-success" (click)="ver(receta)">Ver detalle</button>
+        </div>
+      </div>
+  </div>
+  
+    <pagination-controls class="fs-1 d-block  m-auto text-white text-center"   (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+  
+  <ng-template #listaVacia>
+    <div class="fs-2 fw-bold text-light text-center"> Oops, No hay recetas que empiecen por esa letra </div>
+    
+  </ng-template>
+

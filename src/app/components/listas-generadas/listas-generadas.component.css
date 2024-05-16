@@ -1,0 +1,22 @@
+button {
+    border-radius: 10px;
+    border: 5px solid rgb(115, 104, 104);
+    font-style: normal;
+    box-shadow: 4px 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    background-color: rgb(145, 211, 211);
+    color: black;
+    height: 60px;
+    
+}
+
+li {
+    border: 10px solid rgb(155, 186, 168);
+   
+}
+
+ul p{
+    border: 10px solid rgb(155, 186, 168);
+    
+}
